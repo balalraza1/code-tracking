@@ -1,0 +1,85 @@
+{
+	"name": "@exploring-infinities/bricks",
+	"version": "1.0.0",
+	"type": "module",
+	"main": "dist/bricks.umd.js",
+	"module": "dist/bricks.es.js",
+	"types": "types/src/index.d.ts",
+	"author": "bhanzu",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Exploring-Infinities/ui-packages.git",
+		"directory": "packages/bricks"
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com"
+	},
+	"files": [
+		"dist",
+		"types"
+	],
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"prebuild": "rm -rf dist types",
+		"lint": "eslint . --report-unused-disable-directives --max-warnings 0 --fix",
+		"preview": "vite preview",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build",
+		"chromatic": "npx chromatic --project-token=chpt_b0657972485a0be"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@chromatic-com/storybook": "^1.5.0",
+		"@emotion/react": "^11.11.4",
+		"@emotion/styled": "^11.11.5",
+		"@eslint/compat": "^1.1.0",
+		"@eslint/eslintrc": "^3.1.0",
+		"@eslint/js": "^9.6.0",
+		"@fontsource-variable/quicksand": "^5.0.18",
+		"@mui/material": "^5.15.20",
+		"@storybook/addon-essentials": "^8.1.11",
+		"@storybook/addon-interactions": "^8.1.11",
+		"@storybook/addon-links": "^8.1.11",
+		"@storybook/addon-onboarding": "^8.1.11",
+		"@storybook/blocks": "^8.1.11",
+		"@storybook/react": "^8.1.11",
+		"@storybook/react-vite": "^8.1.11",
+		"@storybook/test": "^8.1.11",
+		"@types/node": "^16.18.101",
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
+		"@typescript-eslint/eslint-plugin": "^7.13.1",
+		"@typescript-eslint/parser": "^7.13.1",
+		"@vitejs/plugin-react": "^4.3.1",
+		"chromatic": "^11.5.4",
+		"eslint": "^9.6.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-prettier": "^5.1.3",
+		"eslint-plugin-react": "^7.34.3",
+		"eslint-plugin-react-hooks": "^4.6.2",
+		"eslint-plugin-react-refresh": "^0.4.7",
+		"eslint-plugin-storybook": "^0.8.0",
+		"eslint-plugin-unused-imports": "^4.0.0",
+		"globals": "^15.8.0",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"storybook": "^8.1.11",
+		"typescript": "^5.2.2",
+		"vite": "^5.3.1",
+		"@mui/icons-material": "^5.15.21"
+	},
+	"peerDependencies": {
+		"@babel/runtime": "^7.20.7",
+		"@emotion/react": "^11.11.4",
+		"@emotion/styled": "^11.11.5",
+		"@fontsource-variable/quicksand": "^5.0.18",
+		"@mui/material": "^5.15.20",
+		"react": "^18",
+		"react-dom": " ^18"
+	},
+	"bugs": {
+		"url": "https://github.com/Exploring-Infinities/bricks/issues"
+	},
+	"homepage": "https://github.com/Exploring-Infinities/bricks#readme"
+}

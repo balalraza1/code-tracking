@@ -1,0 +1,53 @@
+{
+  "name": "@exploring-infinities/ui-packages",
+  "private": true,
+  "scripts": {
+    "build_roomkit": "yarn && turbo run build --filter=@100mslive/roomkit-react",
+    "build_bricks": "yarn && turbo run build --filter=bricks-vite",
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "stream_player_dev": "turbo run dev --no-cache --continue --filter=roomkit-react",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@size-limit/file": "^5.0.3",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.18.113",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "babel-jest": "^26.6.0",
+    "babel-plugin-istanbul": "^6.1.1",
+    "concurrently": "^6.4.0",
+    "dotenv": "^14.2.0",
+    "esbuild": "^0.18.13",
+    "esbuild-plugin-postcss2": "0.1.1",
+    "eslint": "^8.4.1",
+    "eslint-config-react-app": "^7.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "husky": "^6.0.0",
+    "jest": "26.6.0",
+    "lint-staged": "^12.0.3",
+    "postcss": "^8.4.5",
+    "postcss-loader": "^6.2.1",
+    "prettier": "^3.2.5",
+    "size-limit": "^5.0.3",
+    "ts-jest": "26.5.6",
+    "ts-node": "^10.4.0",
+    "turbo": "^2.1.1",
+    "typescript": "~4.7.4"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "yarn@1.22.22",
+  "workspaces": [
+    "packages/*"
+  ],
+  "version": "0.0.1"
+}
