@@ -1,0 +1,33 @@
+name: Publish latest release for Bhanzu UI Packages
+
+on:
+  release:
+    types: [released]
+
+jobs:
+  publish-npm:
+    if: '!github.event.release.prerelease'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      # Setup .npmrc file to publish to GitHub Packages
+      - name: Setup Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'yarn'
+          registry-url: "https://npm.pkg.github.com"
+          # Defaults to the user or organization that owns the workflow file
+          scope: "@exploring-infinities"
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build packages
+        run: yarn build
+
+      - name: Publish latest to github packages
+        run: npm publish --workspaces
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
