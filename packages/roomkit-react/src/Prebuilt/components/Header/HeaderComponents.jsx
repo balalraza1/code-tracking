@@ -7,16 +7,7 @@ import {
   useHMSStore,
 } from "@100mslive/react-sdk";
 import { VolumeOneIcon } from "@100mslive/react-icons";
-import {
-  config,
-  Flex,
-  styled,
-  Text,
-  textEllipsis,
-  VerticalDivider,
-} from "../../../";
-import logo from "../../images/logo-2.svg";
-import useMediaQuery from "../hooks/useMediaQuery";
+import { config, Flex, Text, textEllipsis, VerticalDivider } from "../../../";
 
 export const SpeakerTag = () => {
   const dominantSpeaker = useHMSStore(selectDominantSpeaker);
@@ -47,35 +38,21 @@ export const SpeakerTag = () => {
 };
 
 const LogoLottie = ({ options }) => {
-  const md = useMediaQuery(config.media.md);
   return (
     <Lottie
       style={{
-        position: "relative",
         height: "auto",
-        width: md ? config.theme.space[15] : config.theme.space[17],
-        top: md ? `${config.theme.space[1]}` : `${config.theme.space[1]}`,
-        left: md ? `-${config.theme.space[6]}` : `-${config.theme.space[8]}`,
-        margin: 0,
+        width: config.theme.space[40],
       }}
       options={options}
     />
   );
 };
 
-const LogoImg = styled("img", {
-  height: "$16",
-  w: "auto",
-  objectFit: "contain",
-  "@md": {
-    height: "$13",
-  },
-});
-
 const lottieOptions = {
   loop: true,
   autoplay: true,
-  animationData: require("./logo-lottie-2.json"),
+  animationData: require("./logo-lottie-3.json"),
 };
 
 export const Logo = () => {
@@ -90,7 +67,6 @@ export const Logo = () => {
         justifyContent: previewScreen ? "center" : "flex-start",
       }}
     >
-      <LogoImg src={logo} alt="Bhanzu Logo" />
       <LogoLottie options={lottieOptions} />
     </div>
   );
