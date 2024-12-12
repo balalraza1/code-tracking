@@ -14,13 +14,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "compilerOptions": {
-      "baseUrl": ".",
-      "paths": {
-        "@/lib/utils": ["../../lib/utils"]
-      }
-    }
+    "jsx": "react-jsx"
   },
-  "include": ["src", "**/*.ts", "**/*.tsx"]
+  "include": ["src", "**/*.ts", "**/*.tsx"],
+  "extends": "./tsconfig.paths.json"
 }

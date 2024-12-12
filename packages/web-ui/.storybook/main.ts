@@ -1,6 +1,8 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
+import path from "path";
 
 import { join, dirname } from "path";
+import { Configuration } from "webpack";
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -23,5 +25,19 @@ const config: StorybookConfig = {
     options: {},
   },
   staticDirs: ["../public"],
+  webpackFinal: async (config: Configuration) => {
+    if (config.resolve) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        "@": path.resolve(__dirname, "../src"),
+        "@/lib/utils": path.resolve(__dirname, "../src/shadcn/lib/utils"),
+        "@/components/ui": path.resolve(
+          __dirname,
+          "../src/shadcn/components/ui"
+        ),
+      };
+    }
+    return config;
+  },
 };
 export default config;
