@@ -1,0 +1,14 @@
+{
+  "name": "ngenux-ivs-platform",
+  "version": "1.0.0",
+  "description": "This repository consists of two main components: the **CDK** for AWS cloud stack deployment and the **web-ui** for the frontend React application. Each part plays a crucial role in the overall project architecture, with the **CDK** managing cloud infrastructure and the **web-ui** providing the user interface.",
+  "main": "index.js",
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@types/node": "^20.11.27"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

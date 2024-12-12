@@ -6,6 +6,7 @@
     "build_bricks": "yarn && turbo run build --filter=bricks-vite",
     "build": "turbo build",
     "dev": "turbo dev",
+    "web_ui_dev": "turbo run dev --no-cache --continue --filter=web-ui",
     "stream_player_dev": "turbo run dev --no-cache --continue --filter=roomkit-react",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
