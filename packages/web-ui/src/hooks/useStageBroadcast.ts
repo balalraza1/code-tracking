@@ -56,14 +56,17 @@ export const useStageBroadcast = () => {
   const attachBroadcastClientListeners = () => {
     broadcastClientRef.current.on(
       broadcastClientEventsRef.current.CONNECTION_STATE_CHANGE,
+      //@ts-ignore
       handleConnectionStateChange
     );
     broadcastClientRef.current.on(
       broadcastClientEventsRef.current.ACTIVE_STATE_CHANGE,
+      //@ts-ignore
       handleActiveStateChange
     );
     broadcastClientRef.current.on(
       broadcastClientEventsRef.current.ERROR,
+      //@ts-ignore
       handleClientError
     );
   };
@@ -71,14 +74,17 @@ export const useStageBroadcast = () => {
   const detachBroadcastClientListeners = () => {
     broadcastClientRef.current.off(
       broadcastClientEventsRef.current.CONNECTION_STATE_CHANGE,
+      //@ts-ignore
       handleConnectionStateChange
     );
     broadcastClientRef.current.off(
       broadcastClientEventsRef.current.ACTIVE_STATE_CHANGE,
+      //@ts-ignore
       handleActiveStateChange
     );
     broadcastClientRef.current.off(
       broadcastClientEventsRef.current.ERROR,
+      //@ts-ignore
       handleClientError
     );
   };

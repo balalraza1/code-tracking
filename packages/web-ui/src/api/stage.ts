@@ -4,6 +4,7 @@ const controller = new AbortController();
 const signal = controller.signal;
 
 export const createStage = async (data) =>
+  //@ts-ignore
   await authFetch({
     url: `${apiBaseUrl}/stage/createStage`,
     method: "POST",
@@ -12,6 +13,7 @@ export const createStage = async (data) =>
   });
 
 export const joinStage = async (data) =>
+  //@ts-ignore
   await authFetch({
     url: `${apiBaseUrl}/stage/joinStage`,
     method: "POST",
@@ -20,6 +22,7 @@ export const joinStage = async (data) =>
   });
 
 export const disconnectStage = async (data) =>
+  //@ts-ignore
   await authFetch({
     url: `${apiBaseUrl}/stage/disconnectStage`,
     method: "POST",
@@ -28,6 +31,7 @@ export const disconnectStage = async (data) =>
   });
 
 export const deleteStage = async (data) =>
+  //@ts-ignore
   await authFetch({
     url: `${apiBaseUrl}/stage/deleteStage`,
     method: "POST",
@@ -36,6 +40,7 @@ export const deleteStage = async (data) =>
   });
 
 export const startRecording = async (data) =>
+  //@ts-ignore
   await authFetch({
     url: `${apiBaseUrl}/stage/startRecording`,
     method: "POST",
@@ -44,6 +49,7 @@ export const startRecording = async (data) =>
   });
 
 export const stopRecording = async (data) =>
+  //@ts-ignore
   await authFetch({
     url: `${apiBaseUrl}/stage/stopRecording`,
     method: "POST",
@@ -52,6 +58,7 @@ export const stopRecording = async (data) =>
   });
 
 export const getActiveStageParticipants = async (data) =>
+  //@ts-ignore
   await authFetch({
     url: `${apiBaseUrl}/stage/getStageParticipants`,
     method: "POST",
@@ -60,6 +67,7 @@ export const getActiveStageParticipants = async (data) =>
   });
 
 export const getParticipantLogs = async (data) =>
+  //@ts-ignore
   await authFetch({
     url: `${apiBaseUrl}/stage/getParticipantLogs`,
     method: "POST",

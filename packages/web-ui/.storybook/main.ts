@@ -3,6 +3,7 @@ import path from "path";
 
 import { join, dirname } from "path";
 import { Configuration } from "webpack";
+import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -27,15 +28,12 @@ const config: StorybookConfig = {
   staticDirs: ["../public"],
   webpackFinal: async (config: Configuration) => {
     if (config.resolve) {
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        "@": path.resolve(__dirname, "../src"),
-        "@/lib/utils": path.resolve(__dirname, "../src/shadcn/lib/utils"),
-        "@/components/ui": path.resolve(
-          __dirname,
-          "../src/shadcn/components/ui"
-        ),
-      };
+      config.resolve.plugins = [
+        ...(config.resolve.plugins || []),
+        new TsconfigPathsPlugin({
+          extensions: config.resolve.extensions,
+        }),
+      ];
     }
     return config;
   },

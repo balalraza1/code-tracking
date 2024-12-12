@@ -60,6 +60,7 @@ const BreakoutRoom = ({ stageParticipants, leaveStage, parentId = "" }) => {
               e.payload.EventName === "app:NOTIFY_ALL_USERS"
           )
           ?.slice(-1)
+          // @ts-ignore
           ?.pop()?.payload?.Attributes?.participantList;
         setParticipants(tempParticipantList?.split(",") || []);
       }
@@ -94,6 +95,7 @@ const BreakoutRoom = ({ stageParticipants, leaveStage, parentId = "" }) => {
   // Function to get available participants
   const getAvailableParticipants = () => {
     return [
+      // @ts-ignore
       ...new Set([
         ...stageParticipants.map((sp: { userId }) => sp.userId),
         ...participants,
@@ -249,6 +251,7 @@ const BreakoutRoom = ({ stageParticipants, leaveStage, parentId = "" }) => {
   if (!!parentId) {
     return (
       <Button
+        // @ts-ignore
         type="primary"
         className="mt-6"
         variant="default"
@@ -316,6 +319,7 @@ const BreakoutRoom = ({ stageParticipants, leaveStage, parentId = "" }) => {
           </div>
         </div>
         <Button
+          // @ts-ignore
           type="primary"
           className="mt-6 w-full"
           variant="default"

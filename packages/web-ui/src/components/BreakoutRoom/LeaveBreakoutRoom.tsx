@@ -20,6 +20,7 @@ export default function LeaveBreakoutRoom({ parentId, handleLeaveStage }) {
       description: "Confirm to go back to Main Class",
       content: (
         <Button
+          // @ts-ignore
           type="primary"
           className="mt-6"
           variant="default"

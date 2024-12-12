@@ -4,6 +4,7 @@ const controller = new AbortController();
 const signal = controller.signal;
 
 export const startSession = async (sessionType, groupId, parentId) =>
+  // @ts-ignore
   await authFetch({
     url: `${apiBaseUrl}/session/startSession`,
     method: "POST",
@@ -24,9 +25,11 @@ export const getToken = async (data) =>
   });
 
 export const getLiveStages = async () =>
+  // @ts-ignore
   await unauthFetch({ url: `${apiBaseUrl}/session/getLiveStages` });
 
 export const endSession = async (sessionId) =>
+  // @ts-ignore
   await authFetch({
     url: `${apiBaseUrl}/session/endSession`,
     method: "POST",
@@ -43,6 +46,7 @@ export const getSessionDetails = async (sessionId) =>
   });
 
 export const enableStageBroadcast = async (sessionId) =>
+  // @ts-ignore
   await authFetch({
     url: `${apiBaseUrl}/session/toggleStageBroadcast`,
     method: "POST",
@@ -51,6 +55,7 @@ export const enableStageBroadcast = async (sessionId) =>
   });
 
 export const disableStageBroadcast = async (sessionId) =>
+  // @ts-ignore
   await authFetch({
     url: `${apiBaseUrl}/session/toggleStageBroadcast`,
     method: "POST",
@@ -59,6 +64,7 @@ export const disableStageBroadcast = async (sessionId) =>
   });
 
 export const startRecording = async (sessionId, sessionType) =>
+  // @ts-ignore
   await authFetch({
     url: `${apiBaseUrl}/session/startRecording`,
     method: "POST",
@@ -67,6 +73,7 @@ export const startRecording = async (sessionId, sessionType) =>
   });
 
 export const stopRecording = async (sessionId, sessionType) =>
+  // @ts-ignore
   await authFetch({
     url: `${apiBaseUrl}/session/stopRecording`,
     method: "POST",
@@ -75,6 +82,7 @@ export const stopRecording = async (sessionId, sessionType) =>
   });
 
 export const addParticipant = async (sessionId, username) => {
+  // @ts-ignore
   return await authFetch({
     url: `${apiBaseUrl}/session/addParticipant`,
     method: "POST",
@@ -84,6 +92,7 @@ export const addParticipant = async (sessionId, username) => {
 };
 
 export const removeParticipant = async (sessionId, username) => {
+  // @ts-ignore
   return await authFetch({
     url: `${apiBaseUrl}/session/removeParticipant`,
     method: "POST",
