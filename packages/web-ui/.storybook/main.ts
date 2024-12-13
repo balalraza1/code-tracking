@@ -1,10 +1,7 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
-import path from "path";
-
 import { join, dirname } from "path";
 import { Configuration } from "webpack";
 import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
-
 /**
  * This function is used to resolve the absolute path of a package.
  * It is needed in projects that use Yarn PnP or are set up within a monorepo.
