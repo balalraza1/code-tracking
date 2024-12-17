@@ -27,8 +27,6 @@ async function main() {
   const loader = {
     ".js": "jsx",
     ".png": "dataurl",
-    ".ts": "ts",
-    ".tsx": "tsx",
     ".avif": "file",
     ".jpeg": "dataurl",
     ".jpg": "dataurl",
