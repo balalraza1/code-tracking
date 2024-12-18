@@ -55,23 +55,6 @@ async function main() {
       plugins,
     };
 
-    // Build the CommonJs version
-    esbuild
-      .build({
-        outfile: "dist/index.cjs.js",
-        format: "cjs",
-        ...commonOptions,
-      })
-      .then(({ metafile }) => {
-        console.log("cjs build successful");
-        console.log("creating build dependency file");
-        fs.writeFileSync(
-          "dist/meta.cjs.json",
-          JSON.stringify(metafile, null, 2),
-          "utf-8"
-        );
-      });
-
     // Build the ES module version
     esbuild
       .build({
