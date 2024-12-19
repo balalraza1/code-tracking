@@ -1,7 +1,7 @@
 {
   "name": "@exploring-infinities/icon-pack",
-  "version": "1.0.4",
-  "source": "src/index.tsx",
+  "version": "1.0.5",
+  "source": "src/index.ts",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -15,7 +15,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Exploring-Infinities/ui-packages.git",
-    "directory": "packages/bhanzu-icon-pack"
+    "directory": "packages/icon-pack"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
