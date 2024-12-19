@@ -41,7 +41,7 @@
     "mascot-build": "svgr --icon --typescript --replace-attr-values '#fff=currentColor' --svg-props width='120px' --svg-props height='120px' -d src/mascot assets/mascot && yarn format",
     "badges-build": "svgr --icon --typescript --replace-attr-values '#fff=currentColor' --svg-props width='108px' --svg-props height='108px' -d src/badges assets/badges && yarn format",
     "stickers-build": "svgr --icon --typescript --replace-attr-values '#fff=currentColor' --svg-props width='108px' --svg-props height='108px' -d src/stickers assets/stickers && yarn format",
-    "build": "yarn icons-build && yarn mascot-build && yarn badges-build && yarn stickers-build && rm -rf dist && NODE_ENV=production rollup -c",
+    "build": "yarn icons-build && yarn mascot-build && yarn badges-build && yarn stickers-build && node scripts/generateIndexFile.js && rm -rf dist && NODE_ENV=production rollup -c",
     "format": "prettier -w src/**",
     "lint": "eslint",
     "lint:fix": "eslint src/** --fix"
@@ -50,7 +50,7 @@
     "@rollup/plugin-commonjs": "^21.0.3",
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^8.3.1",
-    "@svgr/cli": "^6.3.1",
+    "@svgr/cli": "^8.1.0",
     "@types/react": "^18.1.0",
     "react": "^18.1.0",
     "rollup": "^2.79.2",

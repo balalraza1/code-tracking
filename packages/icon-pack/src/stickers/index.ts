@@ -1,7 +1,7 @@
-export { default as BigrobbieGame } from "./BigrobbieGame";
-export { default as BigrobbieRight } from "./BigrobbieRight";
-export { default as BigrobbieSit } from "./BigrobbieSit";
-export { default as BigrobbieStar } from "./BigrobbieStar";
+export { default as BigrobbieGameSticker } from "./BigrobbieGameSticker";
+export { default as BigrobbieRightSticker } from "./BigrobbieRightSticker";
+export { default as BigrobbieSitSticker } from "./BigrobbieSitSticker";
+export { default as BigrobbieStarSticker } from "./BigrobbieStarSticker";
 export { default as Duck } from "./Duck";
 export { default as Lamb } from "./Lamb";
 export { default as Panda } from "./Panda";

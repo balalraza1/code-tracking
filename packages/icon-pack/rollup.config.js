@@ -11,7 +11,7 @@ const deps = Object.keys(pkg.dependencies || {});
 const peerDeps = Object.keys(pkg.peerDependencies || {});
 
 const config = {
-  input: ["src/mascot/index.ts", "src/icons/index.ts"],
+  input: "src/index.ts",
   external: [...deps, ...peerDeps],
   output: [
     { format: "cjs", sourcemap: true, dir: "dist" },
