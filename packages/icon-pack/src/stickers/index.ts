@@ -1,10 +1,10 @@
-export { default as Group390 } from "./Group390";
-export { default as Group391 } from "./Group391";
-export { default as Group413 } from "./Group413";
 export { default as BigrobbieGame } from "./BigrobbieGame";
 export { default as BigrobbieRight } from "./BigrobbieRight";
 export { default as BigrobbieSit } from "./BigrobbieSit";
 export { default as BigrobbieStar } from "./BigrobbieStar";
+export { default as Duck } from "./Duck";
+export { default as Lamb } from "./Lamb";
+export { default as Panda } from "./Panda";
 export { default as StickerAstronaut } from "./StickerAstronaut";
 export { default as StickerPlanet } from "./StickerPlanet";
 export { default as StickerRocket1 } from "./StickerRocket1";
