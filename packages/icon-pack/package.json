@@ -1,6 +1,6 @@
 {
   "name": "@exploring-infinities/icon-pack",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "source": "src/index.ts",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -8,8 +8,8 @@
   "author": "bhanzu",
   "license": "MIT",
   "keywords": [
-    "IVSLive",
-    "react",
+    "Edtech-icons",
+    "react-icons",
     "icon-pack"
   ],
   "repository": {
@@ -21,8 +21,7 @@
     "registry": "https://npm.pkg.github.com"
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "exports": {
     ".": {
