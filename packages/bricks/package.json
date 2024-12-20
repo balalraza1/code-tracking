@@ -28,7 +28,9 @@
 		"build-storybook": "storybook build",
 		"chromatic": "npx chromatic --project-token=chpt_b0657972485a0be"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"@exploring-infinities/icon-pack": "1.0.5"
+	},
 	"devDependencies": {
 		"@chromatic-com/storybook": "^1.5.0",
 		"@emotion/react": "^11.11.4",
