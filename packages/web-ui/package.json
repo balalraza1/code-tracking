@@ -70,6 +70,7 @@
     "@radix-ui/react-switch": "^1.0.3",
     "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-tooltip": "^1.0.7",
+    "@repo/tailwind-config": "*",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -95,8 +96,7 @@
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
     "use-image": "^1.1.1",
-    "web-vitals": "^2.1.4",
-    "@repo/tailwind-config": "*"
+    "web-vitals": "^2.1.4"
   },
   "eslintConfig": {
     "extends": [
@@ -149,14 +149,14 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
     "rollup": "^2.70.1",
     "rollup-plugin-esbuild": "^5.0.0",
     "rollup-plugin-import-css": "^3.3.1",
     "rollup-plugin-terser": "^7.0.2",
     "storybook": "^8.4.7",
     "tsconfig-paths-webpack-plugin": "^4.2.0",
-    "webpack": "^5.97.1",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "webpack": "^5.97.1"
   }
 }
