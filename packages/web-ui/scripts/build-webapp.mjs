@@ -2,6 +2,7 @@ import fs from "fs";
 import esbuild from "esbuild";
 import dotenv from "dotenv";
 import autoprefixer from "autoprefixer";
+import tailwindcss from "tailwindcss";
 import PostCssPlugin from "esbuild-plugin-postcss2";
 import svgPlugin from "esbuild-svg";
 const svgrConfig = { exportType: "named" };
@@ -30,11 +31,12 @@ async function main() {
     ".avif": "file",
     ".jpeg": "dataurl",
     ".jpg": "dataurl",
+    ".css": "css",
   };
   const define = { "process.env": JSON.stringify(process.env) };
   const plugins = [
     PostCssPlugin.default({
-      plugins: [autoprefixer],
+      plugins: [tailwindcss, autoprefixer],
     }),
     svgPlugin(svgrConfig),
   ];
@@ -53,6 +55,7 @@ async function main() {
       loader,
       define,
       plugins,
+      logLevel: "debug",
     };
 
     // Build the CommonJS version
