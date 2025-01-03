@@ -18,12 +18,12 @@ const useComposeLayers = (videoUrl, videoStream, stageRef) => {
   });
 
   const [whiteStream] = useState(() => {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = 640; 
-    canvas.height = 480; 
-    ctx.fillStyle = 'white'; 
-    ctx.fillRect(0, 0, canvas.width, canvas.height); 
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = 640;
+    canvas.height = 480;
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     return canvas.captureStream(30);
   });
 
@@ -50,35 +50,56 @@ const useComposeLayers = (videoUrl, videoStream, stageRef) => {
     return false;
   };
 
+  const playVideo = async () => {
+    try {
+      if (videoElement.readyState >= 2) {
+        await videoElement.play();
+      } else {
+        videoElement.addEventListener(
+          "loadeddata",
+          async () => {
+            await videoElement.play();
+          },
+          { once: true }
+        );
+      }
+    } catch (error) {
+      console.warn("Retrying playback:", error);
+      setTimeout(playVideo, 300);
+    }
+  };
   // Function to synchronize video source with the video element
   useEffect(() => {
-    const localVideoStream =
-      localParticipant?.id === activeScreenSharerId
-        ? whiteStream  // As we are not using Annotations over screenshare this is mock White background stream for whiteboarding for annotation over screenshare use localScreenShareStreamRef.current
-        : videoStream;
+    const video = videoElement;
+    video.crossOrigin = "anonymous";
+    video.loop = true;
+    video.muted = true;
+    video.autoplay = true;
 
-    videoElement.crossOrigin = "anonymous";
-    videoElement.loop = true;
-    videoElement.muted = true;
-    videoElement.autoplay = true;
+    // Initialize video source
+    const initVideo = async () => {
+      const localVideoStream =
+        localParticipant?.id === activeScreenSharerId
+          ? whiteStream
+          : videoStream;
 
-    if (validateTracks(localVideoStream)) {
-      videoElement.srcObject = localVideoStream;
-    } else if (videoUrl) {
-      videoElement.src = videoUrl;
-    } else {
-      console.error("No valid video source provided.");
-    }
+      if (validateTracks(localVideoStream)) {
+        video.srcObject = localVideoStream;
+        video.src = "";
+      } else if (videoUrl) {
+        video.srcObject = null;
+        video.src = videoUrl;
+      }
 
-    videoElement.play().catch((error) => {
-      console.error("Error attempting to play video:", error);
-      setTimeout(() => videoElement.play(), 300); // Retry after 300ms
-    });
+      await playVideo();
+    };
+
+    initVideo();
 
     return () => {
-      videoElement.pause();
-      videoElement.src = "";
-      videoElement.srcObject = null;
+      video.pause();
+      video.src = "";
+      video.srcObject = null;
       if (animationIdRef.current) {
         cancelAnimationFrame(animationIdRef.current);
       }
@@ -86,12 +107,11 @@ const useComposeLayers = (videoUrl, videoStream, stageRef) => {
   }, [
     videoUrl,
     videoStream,
-    localScreenShareStreamRef.current,
     localParticipant?.id,
+    localScreenShareStreamRef.current,
     activeScreenSharerId,
-    whiteStream
+    whiteStream,
   ]);
-
   // Attempt to play video with retry logic if needed
   useEffect(() => {
     const attemptPlayVideo = async () => {
@@ -125,7 +145,7 @@ const useComposeLayers = (videoUrl, videoStream, stageRef) => {
       }
       videoElement.removeEventListener("canplay", attemptPlayVideo);
     };
-  }, [videoElement,fileShareRef]);
+  }, [videoElement, fileShareRef]);
 
   // Main rendering logic
   useEffect(() => {
