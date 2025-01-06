@@ -9,7 +9,7 @@
 // }
 
 const {
-  REACT_APP_API_BASE_URL,
+  REACT_APP_API_BASE_URL = "https://dlwa7na4u7qfl.cloudfront.net",
   REACT_APP_COGNITO_USER_POOL_ID,
   REACT_APP_COGNITO_USER_POOL_CLIENT_ID,
   REACT_APP_REGION,
