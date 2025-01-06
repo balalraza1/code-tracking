@@ -30,7 +30,13 @@ const ScreenSharingView = ({
                 isInitializeComplete={isInitializeComplete}
               />
             ) : (
-              
+              <AnnoBoard
+                width={rawSWidth}
+                height={rawSHeight}
+                screenSharer={activeScreenSharer}
+                whiteboarding={whiteboarding}
+                noteboarding={noteboarding}
+              />
             )}
           </>
         )}
